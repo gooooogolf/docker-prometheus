@@ -1,4 +1,5 @@
 {
+  "dashboard": {
   "__inputs": [],
   "__requires": [
     {
@@ -578,4 +579,6 @@
   "timezone": "browser",
   "title": "resource_server_processing_time",
   "version": 12
+},
+  "overwrite": false
 }
