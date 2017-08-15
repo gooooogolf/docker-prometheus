@@ -15,15 +15,19 @@ services:
 
   grafana:
     # build: grafana/
-    image: grafana/grafana
+    image: appcelerator/grafana
+    # image: grafana/grafana
     container_name: grafana
     volumes: 
-      - ./grafana/run2.sh:/run2.sh
-    expose: 
-      - 3000
+      - ./grafana/start.sh:/start.sh
     ports:
       - 3000:3000
+    environment:
+      GRAFANA_PLUGIN_LIST: savantly-heatmap-panel grafana-piechart-panel
+      GRAFANA_USER: admin
+      GRAFANA_PASS: admin
     # env_file:
     #   - ./grafana/gf.config
     command: 
-      - /run2.sh
+      - /run.sh
+      - /start.sh

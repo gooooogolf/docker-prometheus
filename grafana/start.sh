@@ -1,11 +1,11 @@
 #!/bin/bash
 
-: "${GF_SECURITY_ADMIN_PASSWORD:=admin}"
+: "${GRAFANA_PASS:=admin}"
 
 echo 'Starting Grafana...'
 /run.sh "$@" &
 ConfigureGrafana() {
-  curl "http://admin:${GF_SECURITY_ADMIN_PASSWORD}@localhost:3000/api/datasources" \
+  curl "http://admin:${GRAFANA_PASS}@localhost:3000/api/datasources" \
     -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     --data-binary \
