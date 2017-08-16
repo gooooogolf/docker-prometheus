@@ -5,7 +5,7 @@ services:
     image: prom/prometheus
     container_name: prometheus
     volumes: 
-      - ./prometheus/alpha/:/etc/prometheus/
+      - ./prometheus/local/:/etc/prometheus/
     command:
       - '-config.file=/etc/prometheus/prometheus.yml'
     ports:
